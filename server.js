@@ -36,7 +36,7 @@ app.route('/_api/package.json')
 
 app.route('/')
   .get(function(req, res) {
-    res.sendFile('./views/index.html');
+    res.sendFile(__dirname + '/views/index.html');
   })
 
 // Respond package.json
