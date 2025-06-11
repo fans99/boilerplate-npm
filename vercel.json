@@ -1,15 +1,3 @@
 {
-    "routes": [
-        {
-            "src": "/package.json",
-            "dest": "/package.json",
-            "headers": {
-                "Content-Type": "application/json"
-            }
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/package.json"
-        }
-    ]
+    "public": true
 }
