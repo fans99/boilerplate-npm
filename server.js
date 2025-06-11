@@ -7,7 +7,7 @@
 
 var fs = require('fs');
 var express = require('express');
-var path = require('path')
+//var path = require('path')
 var app = express();
 
 if (!process.env.DISABLE_XORIGIN) {
@@ -40,9 +40,9 @@ app.route('/')
     })
 
 // Respond package.json
-app.get('/package.json', (req, res) => {
-  res.sendFile(path.join(__dirname, 'package.json'));
-});
+// app.get('/package.json', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'package.json'));
+// });
 
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
