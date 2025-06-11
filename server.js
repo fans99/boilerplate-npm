@@ -7,6 +7,7 @@
 
 var fs = require('fs');
 var express = require('express');
+var path = require('path')
 var app = express();
 
 if (!process.env.DISABLE_XORIGIN) {
