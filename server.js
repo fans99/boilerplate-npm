@@ -32,11 +32,16 @@ app.route('/_api/package.json')
       res.type('txt').send(data.toString());
     });
   });
-  
+
 app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
     })
+
+// Respond package.json
+app.get('/package.json', (req, res) => {
+  res.sendFile(path.join(__dirname, 'package.json'));
+});
 
 // Respond not found to all the wrong routes
 app.use(function(req, res, next){
@@ -50,7 +55,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500)
       .type('txt')
       .send(err.message || 'SERVER ERROR');
-  }  
+  }
 })
 
 //Listen on port set in environment variable or default to 3000
